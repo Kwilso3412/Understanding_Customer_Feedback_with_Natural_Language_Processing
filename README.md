@@ -1,2 +1,2 @@
-# Understanding customer feedback with Natural Language Processing
+F# Understanding Customer Feedback through ML
 This project was created as apart of my final data practicum project for Master's in Data Science
