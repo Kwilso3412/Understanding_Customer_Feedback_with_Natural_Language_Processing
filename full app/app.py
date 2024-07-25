@@ -1,19 +1,20 @@
 from shiny import reactive, render, req
 from shiny.express import input, render, ui
-from shinyswatch import theme
 from shinywidgets import render_widget
+from shinyswatch import theme
 from faicons import icon_svg as icon
 import sys
 import pathlib
 import pandas as pd
 import plotly.express as px
 
+
 # load data
 complaints_dir = pathlib.Path(__file__).parent/"datasets"/ "complaints"
 review_dir = pathlib.Path(__file__).parent/"datasets" / "reviews"
 image_dir = pathlib.Path(__file__).parent/ "images"
-ui.page_opts(title="NLP Dashboard", fillable=True, id="page",bg = "79bde9")
-theme.cyborg()
+ui.page_opts(title="NLP Dashboard", fillable=True, id="page", theme=theme.cyborg)
+
 with ui.sidebar(id="sidebar_left"):
     ui.tags.link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css")
     with ui.panel_conditional("input.page == 'Time Series'"):
